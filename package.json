@@ -4,8 +4,9 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "dev2": "next dev --turbo",
+    "dev2": "concurrently \"next dev --turbo\" \"tailwindcss --input input.css --output output.css --watch\"",
     "build": "next build",
+    "build2": "tailwindcss input.css --output output.css && next build",
     "start": "next start",
     "lint": "next lint"
   },
@@ -13,11 +14,17 @@
     "@types/node": "18.11.9",
     "@types/react": "18.0.25",
     "@types/react-dom": "18.0.9",
+    "autoprefixer": "^10.4.13",
     "eslint": "8.28.0",
     "eslint-config-next": "13.0.5",
     "next": "13.0.5",
+    "postcss": "^8.4.19",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "tailwindcss": "^3.2.4",
     "typescript": "4.9.3"
+  },
+  "devDependencies": {
+    "concurrently": "^7.6.0"
   }
 }
