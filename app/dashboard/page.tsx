@@ -1,8 +1,11 @@
-import React from 'react';
-
+import React from "react";
 
 const Dashboard = () => {
-  return <div />;
-}
+  return (
+    <div className="flex justify-center items-center h-screen">
+      <h1>Dashboard</h1>
+    </div>
+  );
+};
 
 export default Dashboard;
